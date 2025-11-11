@@ -24,6 +24,16 @@ A implementação é paralela, usando threads.
 
 Estrutura modular para testes e futuras melhorias (por exemplo, monitor ou semáforo).
 
+## O que este teste faz
+
+Verifica se existem 5 filósofos e 5 garfos.
+
+Garante que cada filósofo tem dois garfos válidos.
+
+Confirma que os garfos são objetos distintos.
+
+Testa que os garfos estão compartilhados corretamente entre filósofos, de acordo com a mesa circular.
+
 ## Como Rodar
 
 1. Clone o repositório
