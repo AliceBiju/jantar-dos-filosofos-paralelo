@@ -47,6 +47,14 @@ java Main
 
 4. Observe a saída no console mostrando filósofos pensando e comendo.
 
+## Testes de Unidade
+
+O projeto inclui testes utilizando JUnit 5 para verificar a configuração correta de filósofos e garfos.
+
+- Como rodar os testes:
+
+mvn test
+
 ## Resumo
 
 O projeto demonstra a implementação do problema do Jantar dos Filósofos com:
