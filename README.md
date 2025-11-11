@@ -26,7 +26,7 @@ Estrutura modular para testes e futuras melhorias (por exemplo, monitor ou semá
 
 ## Como Rodar
 
-1. Clone o repositório;
+1. Clone o repositório
    
 2. Entre na pasta do projeto:
 cd jantar-dos-filosofos-paralelo
