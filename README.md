@@ -1,43 +1,65 @@
 # Jantar dos Filósofos - Programação Paralela e Distribuída
 
-Este projeto implementa a solução do problema clássico do **Jantar dos Filósofos**, que simula um cenário em que filósofos tentam comer utilizando garfos compartilhados. A implementação utiliza conceitos de programação paralela, onde cada filósofo tenta pegar dois garfos para comer. O problema é resolvido com a criação de 5 filósofos e 5 garfos, com a garantia de que os garfos são compartilhados de maneira adequada entre os filósofos.
-
-Além disso, foi implementado um **teste de unidade** utilizando JUnit 5 para garantir que os objetos (filósofos e garfos) sejam corretamente inicializados e configurados.
+Este projeto implementa a solução do problema clássico do **Jantar dos Filósofos**, simulando um cenário em que filósofos tentam comer utilizando garfos compartilhados.  
+A implementação utiliza conceitos de **programação paralela**, com cada filósofo representado por uma thread que alterna entre **pensar** e **comer**. Cada filósofo possui dois garfos, sendo que os garfos são compartilhados com os filósofos vizinhos. Estratégias de revezamento são aplicadas para evitar **deadlocks**.
 
 ## Estrutura do Projeto
 
-O projeto é composto por 3 classes principais:
+O projeto contém as seguintes classes:
 
-1. **Garfo**: Representa um garfo compartilhado entre dois filósofos.  
-2. **Fisolofo**: Representa um filósofo que tem dois garfos (um à esquerda e um à direita).  
-3. **Jantar**: Controla o ambiente, criando e inicializando os filósofos e garfos.
+1. **Garfo**: Representa um garfo compartilhado entre dois filósofos.
+2. **Fisolofo**: Representa um filósofo, com tempos de pensar e comer, que alterna o uso dos garfos.
+3. **Jantar**: Controla o ambiente, criando filósofos e garfos, e inicia a execução.
+4. **Main**: Ponto de entrada do programa, configurando os tempos e iniciando o jantar.
 
-O objetivo do código é verificar se, ao rodar o método `iniciar()`, todos os filósofos e garfos são configurados corretamente.
+## Características desta implementação
 
-## Testes de Unidade
+Cada filósofo tem tempo de pensar e tempo de comer.
 
-O projeto inclui testes com JUnit 5 para validar a configuração dos filósofos e garfos:
+Há 5 filósofos e 5 garfos, cada garfo compartilhado entre dois filósofos.
 
-- testFilosofosEConfiguração: Verifica se existem 5 filósofos e se cada um possui dois garfos (esquerdo e direito).
+Os filósofos de número par e ímpar pegam os garfos em ordens diferentes para evitar deadlock.
 
-- testGarfosEConfiguração: Verifica se existem 5 garfos distintos e se não há duplicação de objetos.
+A implementação é paralela, usando threads.
 
-## Como Rodar o Projeto
+Estrutura modular para testes e futuras melhorias (por exemplo, monitor ou semáforo).
 
-- Acesse a pasta do projeto:
+## Como Rodar
 
-cd repo-jantar-dos-filosofos
+1. Clone o repositório;
+   
+2. Entre na pasta do projeto:
+cd jantar-dos-filosofos-paralelo
 
-- Compile o projeto utilizando Maven:
+3. Compile e execute o projeto (usando Maven ou seu IDE favorito):
+javac *.java
+java Main
 
-mvn clean install
+4. Observe a saída no console mostrando filósofos pensando e comendo.
 
-- Para rodar os testes, utilize o comando:
+## Resumo
 
-mvn test
+O projeto demonstra a implementação do problema do Jantar dos Filósofos com:
+
+Threads representando filósofos.
+
+Alternância entre estados de pensar e comer.
+
+Uso seguro de garfos compartilhados, evitando deadlocks.
+
+Tempos configuráveis para pensar e comer.
+
+O foco principal foi simular a concorrência e a sincronização de recursos, reforçando conceitos de programação paralela.
 
 ## Conclusão
 
-Este projeto reforça conceitos importantes de sincronização de recursos e programação concorrente, mostrando como a configuração correta dos objetos é crucial para evitar condições de corrida.
-Embora o teste de unidade inicial esteja configurado para falhar de propósito, ele serve como base para futuras implementações mais complexas, incluindo threads ativas e controle de acesso a recursos compartilhados.
-O aprendizado central é que a estrutura e organização do código, aliadas a testes bem planejados, são fundamentais para garantir o correto funcionamento de sistemas concorrentes
+Este projeto reforça conceitos fundamentais de programação concorrente, como:
+
+Controle de acesso a recursos compartilhados.
+
+Estratégias para evitar deadlock.
+
+Uso de threads para simular processos paralelos.
+
+A implementação modular permite futuras melhorias, como controle por semaphores, monitores ou testes avançados de sincronização.
+
