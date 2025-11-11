@@ -47,5 +47,16 @@ public class Fisolofo extends Thread {
             }
         }
     }
-}
 
+    public Garfo getGarfoEsquerdo() {
+        return garfoEsquerdo;
+    }
+
+    public Garfo getGarfoDireito() {
+        return garfoDireito;
+    }
+
+    public int getIdFilosofo() {
+        return id;
+    }
+}
